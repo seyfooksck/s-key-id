@@ -10,6 +10,23 @@
     "test": "jest",
     "start": "node index.js"
   },
+  "keywords": [
+    "keygen",
+    "secure",
+    "crypto",
+    "nodejs",
+    "encryption",
+    "key",
+    "secret",
+    "password",
+    "server",
+    "keyid",
+    "skeyid",
+    "user secret key",
+    "license",
+    "user license",
+    "node platform id" 
+  ],
   "author": "seyfo",
   "license": "ISC",
   "dependencies": {
