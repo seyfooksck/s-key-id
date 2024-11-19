@@ -134,7 +134,6 @@ Herhangi bir hata veya katkı yapmak isterseniz, lütfen bir pull request gönde
 ## Geliştiriciler
 
 - [Seyfooksck](https://github.com/Seyfooksck)
-- [GitHub](https://github.com/Seyfooksck/s-key-id)
 
 info@seyfooksck.com 
 ---
