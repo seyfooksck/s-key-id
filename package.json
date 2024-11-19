@@ -1,0 +1,21 @@
+{
+  "name": "s-key-id",
+  "version": "1.0.8",
+  "description": "Server Key ID",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "author": "seyfo",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "os": "^0.1.2",
+    "path": "^0.12.7"
+  }
+}
