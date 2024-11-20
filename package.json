@@ -1,11 +1,12 @@
 {
   "name": "s-key-id",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "Server Key ID",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
+
   "scripts": {
     "test": "jest",
     "start": "node index.js"
@@ -34,5 +35,31 @@
     "fs": "^0.0.1-security",
     "os": "^0.1.2",
     "path": "^0.12.7"
+  },
+  "keywords": [
+    "keygen",
+    "secure",
+    "crypto",
+    "nodejs",
+    "encryption",
+    "key",
+    "secret",
+    "password",
+    "server",
+    "keyid",
+    "skeyid",
+    "user secret key",
+    "license",
+    "user license",
+    "node platform id" 
+  ],
+  "homepage": "https://github.com/seyfooksck/s-key-id#s-key-id-secure-key-generator",
+  "bugs": {
+    "url": "https://github.com/seyfooksck/s-key-id/issues",
+    "email": "info@seyfooksck.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seyfooksck/s-key-id.git"
   }
 }
