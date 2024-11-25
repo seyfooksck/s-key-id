@@ -2,6 +2,30 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
+const { v4: uuidv4 } = require('uuid');  // UUID oluşturmak için
+
+// Cihazın benzersiz özelliğini almak (örneğin, MAC adresi)
+function getUniqueDeviceIdentifier() {
+  if (os.platform() === 'win32') {
+    return os.hostname(); // Windows için, cihaz ismi kullanılır
+  } else if (os.platform() === 'linux' || os.platform() === 'darwin') {
+    const networkInterfaces = os.networkInterfaces();
+    for (const iface of Object.values(networkInterfaces)) {
+      for (const alias of iface) {
+        if (alias.mac && alias.mac !== '00:00:00:00:00:00') {
+          return alias.mac;  // MAC adresi benzersizdir
+        }
+      }
+    }
+  }
+
+  throw new Error('Unable to determine a unique device identifier');
+}
+
+// Rastgele bir UUID oluşturmak
+function generateUUID() {
+  return uuidv4();  // UUIDv4 kullanarak her seferinde benzersiz bir değer oluşturur
+}
 
 // Uygulamanın verilerini saklayacağı dizini bulma
 function getAppDataPath() {
@@ -20,7 +44,10 @@ function generateKey({ prefix = '', secret, appname = '', keysize = 32 }) {
     throw new Error('Secret is required to generate the key');
   }
 
-  const baseString = secret + appname; // Anahtarın temel stringi (prefix hariç)
+  const uniqueIdentifier = getUniqueDeviceIdentifier();  // Cihazın benzersiz kimliğini al
+  const uuid = generateUUID();  // Rastgele bir UUID oluştur
+
+  const baseString = secret + appname + uniqueIdentifier + uuid;  // Anahtarın temel stringi
   const hash = crypto.createHash('sha256');
   hash.update(baseString);
   const rawKey = hash.digest('hex');  // 64 karakterlik bir hash oluşturulacak (SHA-256)

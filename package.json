@@ -1,6 +1,6 @@
 {
   "name": "s-key-id",
-  "version": "1.0.10",
+  "version": "1.1.2",
   "description": "Server Key ID",
   "main": "index.js",
   "directories": {
@@ -11,30 +11,14 @@
     "test": "jest",
     "start": "node index.js"
   },
-  "keywords": [
-    "keygen",
-    "secure",
-    "crypto",
-    "nodejs",
-    "encryption",
-    "key",
-    "secret",
-    "password",
-    "server",
-    "keyid",
-    "skeyid",
-    "user secret key",
-    "license",
-    "user license",
-    "node platform id" 
-  ],
   "author": "seyfo",
   "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
     "fs": "^0.0.1-security",
     "os": "^0.1.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "uuid": "^9.0.0"
   },
   "keywords": [
     "keygen",
